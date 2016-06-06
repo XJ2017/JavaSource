@@ -49,7 +49,7 @@ public interface Function<T, R> {
     R apply(T t);
 
     /**
-     * Returns a composed function that first applies the {@code before}
+     * Returns a composed【组成】 function that first applies the {@code before}
      * function to its input, and then applies this function to the result.
      * If evaluation of either function throws an exception, it is relayed to
      * the caller of the composed function.
