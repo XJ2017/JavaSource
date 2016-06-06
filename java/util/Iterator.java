@@ -81,6 +81,8 @@ public interface Iterator<E> {
      * iteration is in progress in any way other than by calling this
      * method.
      *
+     * 这里用到了default，在Java8发布之际，有件事情就显得非常重要，即在不破坏Java现有实现架构的情况下能往接口里增加新方法。
+     *
      * @implSpec
      * The default implementation throws an instance of
      * {@link UnsupportedOperationException} and performs no other action.
@@ -98,10 +100,12 @@ public interface Iterator<E> {
     }
 
     /**
-     * Performs the given action for each remaining element until all elements
+     * Performs the given action for each remaining【剩下的】 element until all elements
      * have been processed or the action throws an exception.  Actions are
      * performed in the order of iteration, if that order is specified.
-     * Exceptions thrown by the action are relayed to the caller.
+     * Exceptions thrown by the action are relayed【转发】 to the caller.
+     *
+     * 为每个剩余元素执行给定的操作,直到所有的元素都已经被处理或行动将抛出一个异常
      *
      * @implSpec
      * <p>The default implementation behaves as if:
