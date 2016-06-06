@@ -74,12 +74,14 @@ public interface Iterator<E> {
     E next();
 
     /**
-     * Removes from the underlying collection the last element returned
+     * Removes from the underlying collection the last element【下一个节点】 returned
      * by this iterator (optional operation).  This method can be called
      * only once per call to {@link #next}.  The behavior of an iterator
      * is unspecified【未详细说明的】 if the underlying collection is modified while the
      * iteration is in progress in any way other than by calling this
      * method.
+     *
+     * 删除当前遍历的元素c
      *
      * 这里用到了default，在Java8发布之际，有件事情就显得非常重要，即在不破坏Java现有实现架构的情况下能往接口里增加新方法。
      *
