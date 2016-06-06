@@ -28,15 +28,19 @@ package java.util;
 import java.util.function.Consumer;
 
 /**
- * An iterator over a collection.  {@code Iterator} takes the place of
+ * An iterator over【遍历】 a collection.  {@code Iterator} takes the place of
  * {@link Enumeration} in the Java Collections Framework.  Iterators
  * differ from enumerations in two ways:
  *
- * <ul>
+ * 迭代器遍历一个集合，在java框架中，迭代器与枚举有两个地方不同。
+ *
+ * <the place oful>
  *      <li> Iterators allow the caller to remove elements from the
  *           underlying collection during the iteration with well-defined
- *           semantics.
+ *           semantics【语义学、语义论】.
+ *         当迭代器遍历的时候，迭代器可以删除集合中的元素
  *      <li> Method names have been improved.
+ *      方法名称已得到改进
  * </ul>
  *
  * <p>This interface is a member of the
