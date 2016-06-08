@@ -35,12 +35,12 @@ import java.io.ObjectStreamException;
  * This is the common base class of all Java language enumeration types.
  *
  * More information about enums, including descriptions of the
- * implicitly declared methods synthesized by the compiler, can be
+ * implicitly【暗中地】 declared methods synthesized by the compiler, can be
  * found in section 8.9 of
  * <cite>The Java&trade; Language Specification</cite>.
  *
  * <p> Note that when using an enumeration type as the type of a set
- * or as the type of the keys in a map, specialized and efficient
+ * or as the type of the keys in a map, specialized【专门的】 and efficient【有效率的】
  * {@linkplain java.util.EnumSet set} and {@linkplain
  * java.util.EnumMap map} implementations are available.
  *
@@ -56,20 +56,20 @@ public abstract class Enum<E extends Enum<E>>
         implements Comparable<E>, Serializable {
     /**
      * The name of this enum constant, as declared in the enum declaration.
-     * Most programmers should use the {@link #toString} method rather than
+     * Most programmers【程序员】 should use the {@link #toString} method rather than
      * accessing this field.
      */
     private final String name;
 
     /**
-     * Returns the name of this enum constant, exactly as declared in its
+     * Returns the name of this enum constant, exactly as【正如】 declared in its
      * enum declaration.
      *
      * <b>Most programmers should use the {@link #toString} method in
-     * preference to this one, as the toString method may return
-     * a more user-friendly name.</b>  This method is designed primarily for
-     * use in specialized situations where correctness depends on getting the
-     * exact name, which will not vary from release to release.
+     * preference【偏爱】 to【优先于……】 this one, as the toString method may return
+     * a more user-friendly name.</b>  This method is designed primarily【主要地】 for
+     * use in specialized situations【状况】 where correctness depends on getting the
+     * exact name, which will not vary from release to release【不会因版本而异】.
      *
      * @return the name of this enum constant
      */
@@ -78,12 +78,12 @@ public abstract class Enum<E extends Enum<E>>
     }
 
     /**
-     * The ordinal of this enumeration constant (its position
-     * in the enum declaration, where the initial constant is assigned
+     * The ordinal【顺序的】 of this enumeration constant (its position
+     * in the enum declaration, where the initial【字首的】 constant is assigned
      * an ordinal of zero).
      *
      * Most programmers will have no use for this field.  It is designed
-     * for use by sophisticated enum-based data structures, such as
+     * for use by sophisticated【复杂的】 enum-based data structures, such as
      * {@link java.util.EnumSet} and {@link java.util.EnumMap}.
      */
     private final int ordinal;
@@ -104,7 +104,7 @@ public abstract class Enum<E extends Enum<E>>
     }
 
     /**
-     * Sole constructor.  Programmers cannot invoke this constructor.
+     * Sole【唯一的】 constructor【构造器】.  Programmers cannot invoke this constructor.
      * It is for use by code emitted by the compiler in response to
      * enum type declarations.
      *
@@ -153,8 +153,8 @@ public abstract class Enum<E extends Enum<E>>
     }
 
     /**
-     * Throws CloneNotSupportedException.  This guarantees that enums
-     * are never cloned, which is necessary to preserve their "singleton"
+     * Throws CloneNotSupportedException.  This guarantees【保证】 that enums
+     * are never cloned, which is necessary to preserve【维持】 their "singleton"
      * status.
      *
      * @return (never returns)
@@ -169,13 +169,13 @@ public abstract class Enum<E extends Enum<E>>
      * than, equal to, or greater than the specified object.
      *
      * Enum constants are only comparable to other enum constants of the
-     * same enum type.  The natural order implemented by this
+     * same enum type.  The natural【自然的】 order implemented by this
      * method is the order in which the constants are declared.
      */
     public final int compareTo(E o) {
         Enum<?> other = (Enum<?>)o;
         Enum<E> self = this;
-        if (self.getClass() != other.getClass() && // optimization
+        if (self.getClass() != other.getClass() && // optimization 【最优化】
             self.getDeclaringClass() != other.getDeclaringClass())
             throw new ClassCastException();
         return self.ordinal - other.ordinal;

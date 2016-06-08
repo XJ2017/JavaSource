@@ -31,6 +31,10 @@ public class FunctionDemo {
         Function<Integer, Integer> funAddThen = e -> e * 2;
         newValue = function.andThen(funAddThen).apply(2);
         System.out.println(newValue);
+
+        // 1-->1
+        newValue = (int) Function.identity().apply(1);
+        System.out.println(newValue);
     }
 
     public static void main(String[] args) {
