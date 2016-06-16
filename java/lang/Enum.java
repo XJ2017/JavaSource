@@ -37,11 +37,11 @@ import java.io.ObjectStreamException;
  * More information about enums, including descriptions of the
  * implicitly【暗中地】 declared methods synthesized by the compiler, can be
  * found in section 8.9 of
- * <cite>The Java&trade; Language Specification</cite>.
+ * <cite>【引用】The Java&trade;【行业】 Language Specification</cite>.
  *
- * <p> Note that when using an enumeration type as the type of a set
+ * <p> Note that【注意】 when using an enumeration type as the type of a set
  * or as the type of the keys in a map, specialized【专门的】 and efficient【有效率的】
- * {@linkplain java.util.EnumSet set} and {@linkplain
+ * {@linkplain java.util.EnumSet set} 【plain 清晰的】 and {@linkplain
  * java.util.EnumMap map} implementations are available.
  *
  * @param <E> The enum type subclass

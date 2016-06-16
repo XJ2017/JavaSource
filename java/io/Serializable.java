@@ -26,36 +26,39 @@
 package java.io;
 
 /**
- * Serializability of a class is enabled by the class implementing the
+ * Serializability【可串行性】 of a class is enabled【启用】 by the class implementing the
  * java.io.Serializable interface. Classes that do not implement this
  * interface will not have any of their state serialized or
- * deserialized.  All subtypes of a serializable class are themselves
+ * deserialized.  All subtypes【子类型】 of a serializable class are themselves【他们自己】
  * serializable.  The serialization interface has no methods or fields
- * and serves only to identify the semantics of being serializable. <p>
+ * and serves only to identify the semantics【语义学】 of being serializable. <p>
  *
  * To allow subtypes of non-serializable classes to be serialized, the
- * subtype may assume responsibility for saving and restoring the
- * state of the supertype's public, protected, and (if accessible)
+ * subtype may assume【假定】 responsibility【职责】 for saving and restoring【恢复】 the
+ * state of the supertype's【超类型】 public, protected, and (if accessible)
  * package fields.  The subtype may assume this responsibility only if
  * the class it extends has an accessible no-arg constructor to
  * initialize the class's state.  It is an error to declare a class
  * Serializable if this is not the case.  The error will be detected at
  * runtime. <p>
+ * 要允许不可序列化类的子类型序列化，可以假定该子类型负责保存和恢复超类型的公用 (public)、受保护的 (protected) 和（如果可访问）
+ * 包 (package) 字段的状态。仅在子类型扩展的类有一个可访问的无参数构造方法来初始化该类的状态时，才可以假定子类型有此职责。
+ * 如果不是这种情况，则声明一个类为可序列化类是错误的。该错误将在运行时检测到。
  *
  * During deserialization, the fields of non-serializable classes will
  * be initialized using the public or protected no-arg constructor of
  * the class.  A no-arg constructor must be accessible to the subclass
  * that is serializable.  The fields of serializable subclasses will
- * be restored from the stream. <p>
+ * be restored【还原】 from the stream. <p>
  *
  * When traversing a graph, an object may be encountered that does not
  * support the Serializable interface. In this case the
  * NotSerializableException will be thrown and will identify the class
  * of the non-serializable object. <p>
  *
- * Classes that require special handling during the serialization and
+ * Classes that require special handling【处理】 during the serialization and
  * deserialization process must implement special methods with these exact
- * signatures:
+ * signatures:【签名】
  *
  * <PRE>
  * private void writeObject(java.io.ObjectOutputStream out)
@@ -67,19 +70,19 @@ package java.io;
  * </PRE>
  *
  * <p>The writeObject method is responsible for writing the state of the
- * object for its particular class so that the corresponding
+ * object for its particular【详细的】 class so that the corresponding【相应】
  * readObject method can restore it.  The default mechanism for saving
  * the Object's fields can be invoked by calling
- * out.defaultWriteObject. The method does not need to concern
+ * out.defaultWriteObject. The method does not need to concern【涉及】
  * itself with the state belonging to its superclasses or subclasses.
- * State is saved by writing the individual fields to the
+ * State is saved by writing the individual【个人的】 fields to the
  * ObjectOutputStream using the writeObject method or by using the
  * methods for primitive data types supported by DataOutput.
  *
  * <p>The readObject method is responsible for reading from the stream and
  * restoring the classes fields. It may call in.defaultReadObject to invoke
- * the default mechanism for restoring the object's non-static and
- * non-transient fields.  The defaultReadObject method uses information in
+ * the default mechanism【机制】 for restoring the object's non-static and
+ * non-transient【非瞬变的】 fields.  The defaultReadObject method uses information in
  * the stream to assign the fields of the object saved in the stream with the
  * correspondingly named fields in the current object.  This handles the case
  * when the class has evolved to add new fields. The method does not need to
@@ -99,9 +102,9 @@ package java.io;
  * deserialized objects properly despite a "hostile" or incomplete source
  * stream.
  *
- * <p>Serializable classes that need to designate an alternative object to be
+ * <p>Serializable classes that need to designate an alternative【供选择的】 object to be
  * used when writing an object to the stream should implement this
- * special method with the exact signature:
+ * special method with the exact signature:【确切的签名】
  *
  * <PRE>
  * ANY-ACCESS-MODIFIER Object writeReplace() throws ObjectStreamException;
